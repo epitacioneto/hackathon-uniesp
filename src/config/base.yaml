@@ -1,0 +1,15 @@
+data:
+  raw_path: "./data/raw/sales_data.csv"
+  processed_path: "./data/processed/sales_processed.parquet"
+  test_size: 0.2
+  random_state: 42
+
+forecasting:
+  target: "sales"
+  horizon: 14
+  freq: "D"
+  metrics: ["mae", "rmse"]
+
+mlflow:
+  tracking_uri: "./mlflow"
+  experiment_name: "sales_forecasting"
