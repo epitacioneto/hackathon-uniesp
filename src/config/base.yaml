@@ -1,15 +1,22 @@
 data:
-  raw_path: "./data/raw/sales_data.csv"
-  processed_path: "./data/processed/sales_processed.parquet"
-  test_size: 0.2
-  random_state: 42
+  raw_paths:
+    raw_gprint_path: "../data/raw/log_gprint_ops.csv"
+    raw_ped_vendedores: "../data/raw/ped_vendedoresgprint.csv"
+    raw_meta_anual: "../data/raw/meta_serie_anual_vendedors.csv"
+  processed_path: "../data/processed/sales_processed.csv"
 
 forecasting:
-  target: "sales"
-  horizon: 14
+  target: "valorVenda"
+  horizon: 365
   freq: "D"
   metrics: ["mae", "rmse"]
 
 mlflow:
-  tracking_uri: "./mlflow"
+  tracking_uri: "http://127.0.0.1:5000"
   experiment_name: "sales_forecasting"
+  step: "prod"
+
+quality:
+  window_size: 30
+  p_val: 0.05
+  coverage: 0.65

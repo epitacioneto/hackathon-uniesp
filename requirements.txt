@@ -1,6 +1,10 @@
 pandas
-scikit-learn
+mlflow
+alibi
+alibi-detect
 seaborn
-numpy==1.26.4
+sktime
 python-dotenv
+prophet
+ipython
 #-e .
